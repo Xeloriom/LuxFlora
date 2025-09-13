@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-gray-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mes Commandes - LuxFlora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Great+Vibes&family=Julius+Sans+One&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-inter text-gray-900">
+
+<section class="px-6 py-10 max-w-screen-xl mx-auto">
+
+  <!-- Header -->
+  <div class="flex  flex-col md:flex-row items-center justify-between bg-gradient-to-r from-black via-gray-900 to-black rounded-2xl px-6 py-6 shadow-lg mb-10">
+    <div class="flex items-center space-x-4 text-white">
+      <img src="../img/img_4.png" alt="LuxFlora Logo" class="w-12 h-12 object-contain bg-white rounded-full" />
+      <h1 class="text-2xl tracking-wide font-light" style="font-family: 'Julius Sans One', sans-serif;">Mes Commandes</h1>
+    </div>
+    <a href="../index.html" class="text-white font-semibold hover:text-gray-300 ">← Retour à l'accueil</a>
+  </div>
+
+  <div id="ordersList" class="space-y-8"></div>
+
+</section>
+
+<script>
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const user = users[users.length - 1]; // dernier utilisateur connecté
+  const ordersDiv = document.getElementById('ordersList');
+
+  if(user && user.orders && user.orders.length > 0){
+    user.orders.forEach(order => {
+      const orderCard = document.createElement('div');
+      orderCard.className = "bg-white rounded-2xl shadow-lg border border-gray-100 p-6 space-y-4";
+
+      // Timeline étapes
+      let steps = [];
+      if(order.deliveryType === 'delivery'){
+        steps = ['Préparée', 'En route', 'Livrée'];
+      } else {
+        steps = ['Préparée', 'Prête au retrait', 'Retirée'];
+      }
+
+      const timeline = steps.map((step, idx) => `
+        <div class="flex flex-col items-center text-center w-1/3">
+          <div class="w-10 h-10 rounded-full ${idx === 0 ? 'bg-green-600 text-white' : 'bg-gray-300 text-gray-700'} flex items-center justify-center font-bold">
+            ${idx === 0 ? '✓' : idx + 1}
+          </div>
+          <span class="text-sm mt-2">${step}</span>
+        </div>
+      `).join('');
+
+      orderCard.innerHTML = `
+        <h2 class="text-lg font-semibold border-b pb-2 mb-4">Commande du ${new Date(order.date).toLocaleString()}</h2>
+
+        <div class="flex justify-between mb-6">${timeline}</div>
+
+        <div class="flex flex-col md:flex-row md:gap-6">
+          <div class="flex-1 space-y-2">
+            <p><span class="font-semibold">Total:</span> ${order.total}</p>
+            <p><span class="font-semibold">Mode de réception:</span> ${order.deliveryType === 'delivery' ? 'Livraison' : 'Retrait en boutique'}</p>
+            <p><span class="font-semibold">Mode de paiement:</span> ${order.paymentMethod === 'online' ? 'En ligne' : 'Sur place'}</p>
+            ${order.deliveryType === 'delivery' && order.address ? `<p><span class="font-semibold">Adresse:</span> ${order.address.street}, ${order.address.city}, ${order.address.zip}, ${order.address.country}</p>` : ''}
+          </div>
+          <div class="flex-1">
+            <h3 class="font-semibold mb-2">Produits :</h3>
+            <ul class="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+              ${order.cart.map(item => `
+                <li class="py-2 flex items-center gap-4">
+                  <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl shadow-sm"/>
+                  <div>
+                    <p class="font-medium text-gray-900">${item.name}</p>
+                    <p class="text-gray-600">${item.price.toFixed(2)} €</p>
+                  </div>
+                </li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+
+      ordersDiv.appendChild(orderCard);
+    });
+  } else {
+    ordersDiv.innerHTML = `<p class="text-gray-500 text-center py-4">Aucune commande trouvée.</p>`;
+  }
+</script>
+
+</body>
+</html>

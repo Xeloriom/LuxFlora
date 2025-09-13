@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LuxFlora</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Great+Vibes&family=Julius+Sans+One&display=swap" rel="stylesheet">
+</head>
+<body class="m-0 p-0 h-screen w-screen overflow-hidden">
+
+<!-- Loader futuriste -->
+<div id="preloader" class="fixed inset-0 flex flex-col justify-center items-center bg-white h-screen w-screen z-[999]">
+  <!-- Logo central -->
+  <div class="relative w-24 h-24 md:w-32 md:h-32 mb-4">
+    <!-- Logo -->
+    <svg class="h-full w-full" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19.75" stroke="black" stroke-width="0.5"/>
+      <path d="M33.4028 20.4902C33.314 20.3337 33.1949 20.1966 33.0524 20.0867C32.91
+       19.9768 32.747 19.8965 32.5731 19.8504C31.5671 19.5949 30.5224
+       19.5285 29.4922 19.6547C30.1344 17.1398 29.7711 15.1594 29.4043 14.0297C29.2967
+       13.692 29.067 13.4065 28.7602 13.2291C28.4533 13.0516 28.0914 12.9949 27.745
+        13.0699C26.432 13.3657 25.1949 13.9311 24.1122 14.7305C23.3973 13.07
+        22.2722 11.6183 20.8426 10.5117C20.5995 10.3264 20.3022 10.226
+        19.9965 10.226C19.6908 10.226 19.3936 10.3264 19.1504 10.5117C17.7208
+         11.6183 16.5958 13.07 15.8809 14.7305C14.7981 13.9313 13.561
+         13.3658 12.2481 13.0699C11.9017 12.9949 11.5397 13.0516 11.2329
+         13.2291C10.9261 13.4065 10.6964 13.692 10.5887 14.0297C10.2219 15.1641 9.85865
+         17.1445 10.5008 19.6547C9.47178 19.529 8.42833 19.5953 7.42349 19.8504C7.24959 19.8965
+         7.08663 19.9768 6.94416 20.0867C6.8017 20.1966 6.68258 20.3337 6.5938 20.4902C6.49967 20.6519
+          6.43874 20.8308 6.41459 21.0163C6.39045 21.2018 6.40356 21.3903 6.45318 21.5707C6.83287 22.9769
+           8.00005 25.65 11.5532 27.7723C15.1063 29.8945 18.295 29.9062 20.0001 29.9062C21.7051 29.9062
+           24.8762 29.9062 28.4458 27.7723C32.0153 25.6383 33.1661 22.9758 33.5458 21.5707C33.595 21.3901
+           33.6077 21.2016 33.5832 21.016C33.5586 20.8305 33.4973 20.6517 33.4028 20.4902ZM27.9454 13.9816C28.0656
+            13.9567 28.1908 13.9777 28.2964 14.0403C28.402 14.103 28.4803 14.2028 28.5161 14.3203C28.9848 15.7851
+            29.4536 18.8144 27.254 22.6406C26.0293 24.7723 24.3114 26.4141 22.7879 27.4969C23.9844
+            25.9219 25.1563 23.4891 25.1563 19.9676C25.1686 18.4941 24.9357 17.0287 24.4672 15.6316C25.4911 14.8324
+            26.6787 14.269 27.9454 13.9816ZM11.484 14.3203C11.5207 14.2038 11.5995 14.1051 11.705 14.0436C11.8106
+            13.982 11.9353 13.962 12.0547 13.9875C13.3209 14.2731 14.5085 14.8345 15.5329 15.6316C15.0644
+            17.0287 14.8315 18.4941 14.8438 19.9676C14.8438 23.4891 16.0157 25.923 17.2122 27.4945C15.6887
+            26.4117 13.9708 24.7699 12.7461 22.6383C10.5454 18.8086 11.0106 15.7793 11.484 14.3203ZM12.0372
+            26.9766C8.76763 25.023 7.70123 22.6031 7.36138 21.334C7.34409 21.2728 7.33943 21.2087 7.34769
+            21.1456C7.35595 21.0826 7.37696 21.0219 7.40943 20.9672C7.43682 20.9178 7.47386 20.8744 7.51835 20.8395C7.56284
+             20.8047 7.61387 20.7792 7.66841 20.7644C8.69294 20.5073 9.75995 20.4674 10.8008 20.6473C11.1004 21.5012 11.4794
+             22.3251 11.9329 23.1082C13.4891 25.8152 15.7602 27.757 17.5895 28.8633C15.6231 28.6422 13.7284 27.9956
+             12.0372 26.9684V26.9766ZM20.0059
+             28.8914C19.2422 28.3596 18.5667 27.711 18.0043 26.9695C16.5278 25.0523 15.7813 22.6992 15.7813
+             19.9676C15.7813 14.782 18.534 12.1453 19.7176 11.2535C19.799 11.1921 19.8981 11.1589 20.0001
+             11.1589C20.102 11.1589 20.2011 11.1921 20.2825 11.2535C21.4661 12.1453 24.2188 14.782 24.2188 19.9676C24.2188
+             22.6992 23.4723 25.0523 22.0016 26.9613C21.4392 27.7028 20.7638 28.3514 20.0001 28.8832L20.0059 28.8914ZM32.6446
+             21.334C32.3024 22.6031 31.2383 25.023 27.9688 26.9766C26.2773 28.003 24.3827 28.6488 22.4165 28.8691C24.2458
+             27.7629 26.518 25.8223 28.0731 23.1141C28.5265 22.3309 28.9056 21.507 29.2051 20.6531C30.246 20.4727
+             31.3131 20.5126 32.3376 20.7703C32.3921 20.785 32.4431 20.8106 32.4876 20.8454C32.5321 20.8802 32.5691
+             20.9236 32.5965 20.973C32.6563 21.0805 32.6715 21.2072 32.6387 21.3258L32.6446 21.334Z" fill="black"/>
+    </svg>
+    <!-- Cercle de progression futuriste -->
+    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.1)" stroke-width="10" fill="none"/>
+      <circle id="progress-circle" cx="50" cy="50" r="44" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="282.6" stroke-dashoffset="282.6"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Section principale -->
+<section class="h-screen w-screen grid grid-cols-2 overflow-hidden ">
+  <!-- Pages injectées par JS -->
+  <div id="pages-container" class="h-full w-full relative"></div>
+
+  <!-- 3D Canvas -->
+  <div id="load3D"
+       class="overflow-hidden relative flex justify-center items-center overflow-hidden w-full min-h-[400px] sm:h-[70vh] md:h-screen">
+    <div id="canvas3d"
+         class="absolute inset-0 flex justify-center items-center w-full h-full"></div>
+  </div>
+
+  <!-- Icône profil cachée par défaut -->
+  <button id="profileIcon" class="hidden fixed top-6 md:top-4 right-24 md:right-3 cursor-pointer rounded-full p-2 md:p-3 z-[9999]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" class="md:w-8 md:h-8"
+         viewBox="0 0 24 24"><g fill="none" stroke="black"
+                                stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5">
+      <path d="M15 2.458A10 10 0 0 0 12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10a10 10 0 0 0-.458-3"/>
+      <path d="M15 10a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-9.5 9.5l.56-.98A5 5 0 0 1 10.402 16h3.196a5 5 0 0 1 4.341
+    2.52l.56.98"/>
+    </g>
+    </svg>
+  </button>
+
+  <!-- Bouton musique flottant -->
+  <button id="musicToggleBtn" class="z-[999] fixed bottom-4 right-4 w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-full flex justify-center items-center shadow-lg hover:shadow-xl transition-all">
+    <!-- Equalizer animé -->
+    <span class="flex items-center gap-0.5 md:gap-1">
+      <span class="music-bar w-0.5 md:w-1 h-4 bg-white rounded"></span>
+      <span class="music-bar w-0.5 md:w-1 h-4 bg-white rounded"></span>
+      <span class="music-bar w-0.5 md:w-1 h-4 bg-white rounded"></span>
+      <span class="music-bar w-0.5 md:w-1 h-4 bg-white rounded"></span>
+      <span class="music-bar w-0.5 md:w-1 h-4 bg-white rounded"></span>
+    </span>
+  </button>
+</section>
+
+<!-- Scripts -->
+<script type="module" src="js/spline.js"></script>
+<script type="module" src="js/page.js"></script>
+<script type="module" src="js/preloader.js"></script>
+<script type="module" src="js/shop.js"></script>
+<script type="module" src="js/sound.js" defer></script>
+<script type="module" src="js/users.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

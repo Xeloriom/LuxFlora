@@ -1,0 +1,122 @@
+{
+  "en": {
+    "home": {
+      "title1": "Wedding",
+      "title2": "Beautiful in White",
+      "price": "$44.5",
+      "addToCart": "Add to Cart",
+      "romance": "ROMANCE",
+      "timeless": "Timeless Romance"
+    },
+    "about": {
+      "title": "ABOUT US",
+      "text": "At LuxFlora, we believe that flowers are more than just gifts—they are expressions of love, joy, and beauty..."
+    },
+    "contact": {
+      "title": "CONTACT US",
+      "text": "Get in Touch with LuxFlora"
+    },
+    "header": {
+      "li1": "FLOWERS",
+      "li2": "OCCASIONS",
+      "li3": "ABOUT US",
+      "li4": "CONTACT US"
+    }
+  },
+  "fr": {
+    "home": {
+      "title1": "Mariage",
+      "title2": "Magnifique en Blanc",
+      "price": "44.5€",
+      "addToCart": "Ajouter au Panier",
+      "romance": "ROMANCE",
+      "timeless": "Romance Intemporelle"
+    },
+    "about": {
+      "title": "À PROPOS",
+      "subtitle": "Chez LuxFlora, nous croyons que les fleurs ne sont pas seulement des cadeaux..."
+    },
+    "contact": {
+      "title": "CONTACTEZ-NOUS",
+      "subtitle": "Prenez contact avec LuxFlora"
+    },
+    "header": {
+      "li1": "Fleurs",
+      "li2": "Occasions",
+      "li3": "À propos",
+      "li4": "Contact"
+    }
+  },
+  "de": {
+    "home": {
+      "title1": "Hochzeit",
+      "title2": "Schön in Weiß",
+      "price": "44,5€",
+      "addToCart": "In den Warenkorb",
+      "romance": "ROMANTIK",
+      "timeless": "Zeitlose Romantik"
+    },
+    "about": {
+      "title": "ÜBER UNS",
+      "text": "Bei LuxFlora glauben wir, dass Blumen mehr als nur Geschenke sind – sie sind Ausdruck von Liebe, Freude und Schönheit..."
+    },
+    "contact": {
+      "title": "KONTAKTIEREN SIE UNS",
+      "text": "Kontaktieren Sie LuxFlora"
+    },
+    "header": {
+      "li1": "Blumen",
+      "li2": "Anlässe",
+      "li3": "Über uns",
+      "li4": "Kontakt"
+    }
+  },
+  "es": {
+    "home": {
+      "title1": "Boda",
+      "title2": "Bella de Blanco",
+      "price": "44,5€",
+      "addToCart": "Añadir al carrito",
+      "romance": "ROMANCE",
+      "timeless": "Romance Atemporal"
+    },
+    "about": {
+      "title": "SOBRE NOSOTROS",
+      "text": "En LuxFlora, creemos que las flores son más que regalos: son expresiones de amor, alegría y belleza..."
+    },
+    "contact": {
+      "title": "CONTÁCTANOS",
+      "text": "Contacta con LuxFlora"
+    },
+    "header": {
+      "li1": "Flores",
+      "li2": "Ocasiones",
+      "li3": "Sobre nosotros",
+      "li4": "Contacto"
+    }
+  },
+  "ar": {
+    "home": {
+      "title1": "زفاف",
+      "title2": "جميلة باللون الأبيض",
+      "price": "٤٤٫٥€",
+      "addToCart": "أضف إلى السلة",
+      "romance": "رومانسية",
+      "timeless": "رومانسية خالدة"
+    },
+    "about": {
+      "title": "معلومات عنا",
+      "text": "في لوكس فلورا، نعتقد أن الزهور ليست مجرد هدايا، بل هي تعبيرات عن الحب والفرح والجمال..."
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "text": "تواصل مع لوكس فلورا"
+    },
+    "header": {
+      "li1": "زهور",
+      "li2": "مناسبات",
+      "li3": "معلومات عنا",
+      "li4": "اتصل بنا"
+    }
+  }
+}

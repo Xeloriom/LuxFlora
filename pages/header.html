@@ -1,0 +1,60 @@
+<header id="siteHeader"
+        class="fixed top-0 left-0 w-screen py-7 px-6 md:px-20 flex items-center z-[9999] text-black bg-white md:bg-transparent"
+        style="font-family: 'Julius Sans One', sans-serif;"
+        data-aos="fade-down" data-aos-duration="800">
+
+  <!-- Logo + nom entreprise -->
+  <button id="logo-container" class="flex items-center space-x-4 cursor-pointer z-[1000]">
+    <img src="../img/img_4.png" alt="LuxFlora Logo" class="w-10 h-10 object-contain">
+    <span class="text-xl">LUXFLORA</span>
+  </button>
+
+  <!-- Menu Desktop -->
+  <nav id="desktopNav" class="hidden md:flex md:flex-1 md:justify-start md:ml-40 ">
+    <ul class="flex space-x-8">
+      <li><a href="#" class="text-black hover:text-[#D04546] transition duration-300" data-i18n="header.li1" data-route-name="FLOWERS">FLOWERS</a></li>
+      <li><a href="#" class="text-black hover:text-[#D04546] transition duration-300" data-i18n="header.li2" data-route-name="OCCASIONS">OCCASIONS</a></li>
+      <li><a href="#" class="text-black hover:text-[#D04546] transition duration-300" data-i18n="header.li3" data-route-name="ABOUT US">ABOUT US</a></li>
+      <li><a href="#" class="text-black hover:text-[#D04546] transition duration-300" data-i18n="header.li4" data-route-name="CONTACT US">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <!-- Téléphone + Panier + Burger -->
+  <div class="flex justify-end items-center space-x-5 ml-auto ">
+    <span class=" sm:block font-medium whitespace-nowrap hidden md:inline">TEL. +48 512 345 678</span>
+
+    <!-- Icône panier -->
+    <button id="headerCartIcon" class="relative cursor-pointer rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993
+              1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125
+              1.125 0 0 1-1.12-1.243l1.264-12A1.125
+              1.125 0 0 1 5.513 7.5h12.974c.576 0
+              1.059.435 1.119 1.007ZM8.625 10.5a.375.375
+              0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5
+              0a.375.375 0 1 1-.75 0 .375.375 0 0 1
+              .75 0Z" />
+      </svg>
+      <span id="cartCountHeader" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full px-2 py-0">0</span>
+    </button>
+
+    <!-- Menu Burger (mobile) -->
+    <button id="burger" class="md:hidden flex flex-col space-y-1 cursor-pointer z-[1000]" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="w-6 h-0.5 bg-black"></span>
+      <span class="w-6 h-0.5 bg-black"></span>
+      <span class="w-6 h-0.5 bg-black"></span>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <nav id="mobileMenu" class="hidden fixed top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center z-[998]">
+    <ul class="flex flex-col space-y-8 text-center">
+      <li><a href="#" class="text-2xl text-black hover:text-[#D04546]" data-i18n="header.li1" data-route-name="FLOWERS">FLOWERS</a></li>
+      <li><a href="#" class="text-2xl text-black hover:text-[#D04546]" data-i18n="header.li2" data-route-name="OCCASIONS">OCCASIONS</a></li>
+      <li><a href="#" class="text-2xl text-black hover:text-[#D04546]" data-i18n="header.li3" data-route-name="ABOUT US">ABOUT US</a></li>
+      <li><a href="#" class="text-2xl text-black hover:text-[#D04546]" data-i18n="header.li4" data-route-name="CONTACT US">CONTACT US</a></li>
+    </ul>
+  </nav>
+</header>

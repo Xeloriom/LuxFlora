@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Home",
+    "file": "pages/home.html"
+  },
+  {
+    "name": "FLOWERS",
+    "file": "pages/flower.html"
+  },
+  {
+    "name": "OCCASIONS",
+    "file": "pages/occasions.html"
+  },
+  {
+    "name": "ABOUT US",
+    "file": "pages/about.html"
+  },
+  {
+    "name": "CONTACT US",
+    "file": "pages/contact.html"
+  }
+]

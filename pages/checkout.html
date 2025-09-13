@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LuxFlora - Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Great+Vibes&family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <style>
+    /* Ajouter un effet de sélection */
+    input.delivery-radio:checked + svg {
+      transform: scale(1.2);
+      transition: transform 0.3s;
+    }
+
+    label {
+      border-color: #d1d5db; /* gris clair par défaut */
+    }
+    label:hover {
+      border-color: black;
+    }
+  </style>
+</head>
+<body class="bg-white font-inter text-gray-900">
+<!-- Pop-up pour erreurs de formulaire -->
+<div id="errorPopup" class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-3xl shadow-2xl p-8 w-11/12 max-w-md border border-gray-200">
+    <h3 class="text-2xl font-semibold mb-4 text-gray-900" style="font-family: 'Julius Sans One', sans-serif;">⚠ Attention</h3>
+    <p class="text-gray-600 mb-4">Veuillez remplir correctement les champs suivants :</p>
+    <ul id="missingFieldsList" class="list-disc list-inside text-gray-700 mb-6"></ul>
+    <button id="closePopup" class="w-full py-3 bg-black text-white font-semibold rounded-xl hover:bg-gray-900 transition shadow-md">
+      Fermer
+    </button>
+  </div>
+</div>
+
+<!-- Icône profil cachée par défaut -->
+<div id="profileIcon" class="hidden fixed top-4 right-4 bg-black rounded-full p-3">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+       viewBox="0 0 24 24"><g fill="none" stroke="white"
+                              stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="1.5">
+    <path d="M15 2.458A10 10 0 0 0 12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10a10 10 0 0 0-.458-3"/>
+    <path d="M15 10a3 3 0 1 1-6 0a3 3 0 0 1 6 0m-9.5 9.5l.56-.98A5 5 0 0 1 10.402 16h3.196a5 5 0 0 1 4.341
+    2.52l.56.98m.475-17.479c.006-.028.046-.028.052 0a3.79 3.79 0 0 0 2.953 2.953c.028.006.028.046 0
+    .052a3.79 3.79 0 0 0-2.953 2.953c-.006.028-.046.028-.052 0a3.79 3.79 0 0 0-2.953-2.953c-.028-.006-.028-.046
+    0-.052a3.79 3.79 0 0 0 2.953-2.953"/>
+  </g>
+  </svg>
+</div>
+
+
+<section class="px-6 py-10 max-w-screen-xl mx-auto">
+  <!-- Header -->
+  <div class="flex items-center justify-between bg-gradient-to-r from-black via-gray-900 to-black rounded-2xl px-6 py-6 shadow-lg mb-10">
+    <div class="flex items-center space-x-4 text-white">
+      <img src="../img/img_4.png" alt="LuxFlora Logo" class="w-12 h-12 object-contain bg-white rounded-full" />
+      <h1 class="text-2xl tracking-wide font-light" style="font-family: 'Julius Sans One', sans-serif;">
+        LuxFlora Checkout
+      </h1>
+    </div>
+    <span class="text-sm italic text-gray-300 hidden md:block">Secure & Elegant Payment</span>
+  </div>
+
+  <div class="lg:flex lg:gap-12 xl:gap-16">
+    <!-- Livraison & Paiement -->
+    <div class="flex-1 space-y-10">
+      <!-- Mode Livraison / Retrait -->
+      <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
+        <h3 class="text-lg font-semibold mb-4">Mode de réception</h3>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <!-- Livraison Card -->
+          <label class="cursor-pointer relative border-2 rounded-xl p-4 flex flex-col items-center text-center transition" id="label-delivery">
+            <input type="radio" name="deliveryType" value="delivery" class="delivery-radio absolute opacity-0 w-0 h-0">
+            <svg class="w-8 h-8 mb-1 text-green-600 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                <path stroke-width="1.5" d="M10.5 21.5c-3.771 0-5.657 0-6.828-1.172S2.5 17.271 2.5
+                 13.5v-7h19v8m-19-8l.6-.8c1.178-1.57 1.767-2.355 2.611-2.778C6.556 2.5 7.537 2.5 9.5 2.5h5c1.963
+                 0 2.944 0 3.789.422c.844.423 1.433 1.208 2.611 2.778l.6.8"/><path stroke-width="1.5" d="M21.5 18.5s-2.042
+                 3-5 3s-5-3-5-3s2-3 5-3s5 3 5 3"/>
+                <path stroke-width="2" d="M16.5 18.5h.009"/>
+              </g>
+            </svg>
+            <span class="font-semibold text-sm">Livraison</span>
+            <span class="text-xs text-gray-500 mt-1">À domicile</span>
+          </label>
+
+          <!-- Retrait Card -->
+          <label class="cursor-pointer relative border-2 rounded-xl p-4 flex flex-col items-center text-center transition" id="label-pickup">
+            <input type="radio" name="deliveryType" value="pickup" class="delivery-radio absolute opacity-0 w-0 h-0">
+            <svg class="w-8 h-8 mb-1 text-pink-600 transition-transform" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+              <path stroke-width="1.5" d="M3.5 10v5c0 2.828 0 4.243.879 5.121C5.257
+              21 6.672 21 9.5 21H14m3-13.498a2.5 2.5 0 0 1-5-.002a2.5 2.5 0 0 1-5 0C7
+               8.88 5.827 10 4.379 10c-.78 0-1.479-.324-1.959-.84c-.825-.884-.294-2.186.394-3.172l.388-.53c.882-1.205
+                1.323-1.808 1.963-2.133S6.552 3 8.045 3l7.91.001c1.493 0 2.24 0 2.88.325s1.08.928 1.962
+                2.133l.389.531c.688.986 1.22 2.288.394 3.173c-.48.514-1.18.839-1.959.839c-1.447 0-2.621-1.12-2.621-2.5m1
+                4.998c-1.933 0-3.5 1.537-3.5 3.434c0 1.085.438 1.928 1.313 2.681c.616.531 1.738 1.67 2.187
+                2.385c.471-.7 1.57-1.854 2.188-2.385c.875-.753 1.312-1.596 1.312-2.68c0-1.898-1.567-3.435-3.5-3.435"/>
+              <path stroke-width="2" d="M18 16h.009"/>
+            </g>
+            </svg>
+            <span class="font-semibold text-sm">Retrait</span>
+            <span class="text-xs text-gray-500 mt-1">En boutique</span>
+          </label>
+        </div>
+
+        <!-- Sous-choix paiement pour Retrait -->
+        <div id="pickupPaymentOptions" class="grid grid-cols-2 gap-4 mb-4 hidden">
+          <label class="cursor-pointer border-2 rounded-xl p-4 flex flex-col items-center text-center transition" id="pay-now-label">
+            <input type="radio" name="pickupPayment" value="pay-now" class="pickup-radio absolute opacity-0 w-0 h-0">
+            <span class="font-semibold text-sm">Payer maintenant</span>
+          </label>
+          <label class="cursor-pointer border-2 rounded-xl p-4 flex flex-col items-center text-center transition" id="pay-later-label">
+            <input type="radio" name="pickupPayment" value="pay-later" class="pickup-radio absolute opacity-0 w-0 h-0">
+            <span class="font-semibold text-sm">Payer sur place</span>
+          </label>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-900 border-b pb-4 mb-6">Delivery Details</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <input type="text" id="your_name" placeholder="Full Name"
+                 class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <input type="email" id="your_email" placeholder="Email"
+                 class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <input type="tel" id="phone" placeholder="Phone Number"
+                 class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <input type="text" id="address" placeholder="Street Address"
+                 class="checkout-input sm:col-span-2 p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <input type="text" id="city" placeholder="City"
+                 class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <input type="text" id="zip" placeholder="Postal Code"
+                 class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+          <select id="country" class="checkout-input sm:col-span-2 p-4 border-2 border-gray-300 rounded-xl bg-white appearance-none">
+            <option selected>France</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="ES">Spain</option>
+            <option value="AU">Australia</option>
+          </select>
+
+          <!-- Code promo -->
+          <div class="sm:col-span-2 flex gap-2">
+            <input type="text" id="promo" placeholder="Promo Code"
+                   class="flex-1 checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 transition"/>
+            <button type="button" id="applyPromo"
+                    class="bg-black text-white  px-2 md:px-6 rounded-xl hover:bg-gray-800 transition font-semibold shadow-md">
+              Apply
+            </button>
+          </div>
+          <p id="promoMessage" class="text-green-600 text-sm sm:col-span-2"></p>
+        </div>
+      </div>
+
+      <!-- Carte bancaire -->
+      <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
+        <h3 class="text-xl font-semibold mb-6">Card Details</h3>
+        <input type="text" placeholder="Cardholder Name" class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 w-full mb-4"/>
+        <input id="cardNumber" type="text" placeholder="Card Number" class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 w-full mb-4"/>
+        <div class="flex flex-col md:flex-row gap-4 ">
+          <input id="cardExpiry" type="text" placeholder="MM/YY" class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 flex-1"/>
+          <input id="cardCVC" type="text" placeholder="CVC" class="checkout-input p-4 border-2 border-gray-300 rounded-xl focus:border-black focus:ring-0 flex-1"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Résumé & paiement -->
+    <div class="mt-10 lg:mt-0 lg:max-w-md w-full space-y-8">
+      <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
+        <h2 class="text-2xl font-semibold text-gray-900 border-b pb-4 mb-6">Order Summary</h2>
+        <ul id="cartItemsList" class="divide-y divide-gray-200 max-h-96 overflow-y-auto"></ul>
+        <div class="mt-4 flex justify-between text-lg font-semibold">
+          <span>Total</span>
+          <span id="cartTotalDisplay">0 €</span>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
+        <h3 class="text-lg font-medium mb-4">Payment Methods</h3>
+        <div class="flex gap-4 flex-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="h-10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" class="h-10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal" class="h-10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" class="h-10">
+        </div>
+      </div>
+
+      <button type="submit"
+              id="checkoutButton"
+              class="w-full mt-4 py-4 bg-black text-white font-semibold rounded-xl hover:bg-white hover:text-black border border-black transition shadow-lg">
+        Proceed to Payment
+      </button>
+    </div>
+  </div>
+</section>
+
+<script src="../js/cart.js"></script>
+<script src="../js/delivery.js"></script>
+<script src="../js/card.js"></script>
+<script src="../js/users.js"></script>
+<script src="../js/checkout.js"></script>
+
+<style>
+  .checkout-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+</style>
+</body>
+</html>

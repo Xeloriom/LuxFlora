@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Bouquet de roses rouges",
+    "description": "Douze roses rouges intenses, symbole d\u2019amour et de passion. Bouquet classique pour offrir des sentiments sinc\u00e8res.",
+    "price": 38.99,
+    "image": "https://www.madameveutdesroses.com/cdn/shop/files/Bouquetde10roseseternelles-vaseverrebombe.jpg?v=1709827100&width=2048",
+    "category": "Fleurs",
+    "badge": "\u2764\ufe0f Best-seller"
+  },
+  {
+    "name": "Bouquet de tulipes printani\u00e8res",
+    "description": "Bouquet color\u00e9 de tulipes multicolores (rouges, jaunes, roses, etc.), id\u00e9al pour le printemps. Symbole de joie et renouveau.",
+    "price": 29.99,
+    "image": "https://www.lefleuriste.com/image/cache/catalog/new%20product/2700_lg-550x651.jpg",
+    "category": "Fleurs",
+    "badge": "\u2728 Nouveaut\u00e9"
+  },
+  {
+    "name": "Bouquet de lys blancs",
+    "description": "Bouquet raffin\u00e9 de lys blancs purit\u00e9, repr\u00e9sentant la puret\u00e9 et la dignit\u00e9. Parfait pour un cadeau \u00e9l\u00e9gant.",
+    "price": 44.50,
+    "image": "https://m.media-amazon.com/images/I/611TQlcPT-L._UF1000,1000_QL80_.jpg",
+    "category": "Fleurs",
+    "badge": ""
+  },
+  {
+    "name": "Bouquet de tournesols",
+    "description": "Bouquet lumineux compos\u00e9 de tournesols jaunes vifs. Id\u00e9al pour apporter chaleur et bonne humeur dans la maison.",
+    "price": 31.99,
+    "image": "https://thumbs.dreamstime.com/b/tournesols-dans-un-vase-en-verre-43209753.jpg",
+    "category": "Fleurs",
+    "badge": ""
+  },
+  {
+    "name": "Bouquet de fleurs sauvages champ\u00eatre",
+    "description": "Composition champ\u00eatre avec marguerites, coquelicots et bleuets. Bouquet d\u00e9contract\u00e9 rappelant la nature et la libert\u00e9.",
+    "price": 27.50,
+    "image": "https://www.artplants.fr/media/catalog/product/i/m/img_0049.jpg",
+    "category": "Fleurs",
+    "badge": ""
+  },
+  {
+    "name": "Orchid\u00e9e Phalaenopsis en pot",
+    "description": "Orchid\u00e9e blanche en pot. Fleur exotique \u00e0 la floraison longue, pour d\u00e9corer les int\u00e9rieurs avec \u00e9l\u00e9gance.",
+    "price": 52.00,
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQF6vobHWcVaHxgt-69bLDfzEWT_uFXuhoUw7PjUtInsQTNcTuGy7qKfIdlKYDMHNm8vmYIhCuLo9PJBV5KPFm3SzsQoq21Ftlv4SVSa07g&usqp=CAc",
+    "category": "Plantes",
+    "badge": ""
+  },
+  {
+    "name": "Monstera Deliciosa en pot",
+    "description": "Plante verte d\u2019int\u00e9rieur aux grandes feuilles d\u00e9coupe\u00e9es (feuille d\u2019\u00e9dition). Apporte une touche tropicale \u00e0 votre d\u00e9co.",
+    "price": 14.99,
+    "image": "https://www.artplants.fr/media/catalog/product/7/4/74488-1.jpg",
+    "category": "Plantes",
+    "badge": ""
+  },
+  {
+    "name": "Cactus du d\u00e9sert (succulente) en pot",
+    "description": "Petit cactus succulente en pot, facile \u00e0 entretenir, avec des fleurs occasionnelles. Id\u00e9al en d\u00e9co minimaliste.",
+    "price": 9.99,
+    "image": "https://www.quipeutlefaire.fr/wp-content/uploads/succulent_terrarium_-_pistils_nursery_86cad0eb-e034-4bff-9f30-3570987b6691_550x825.jpg",
+    "category": "Plantes",
+    "badge": ""
+  }
+]
