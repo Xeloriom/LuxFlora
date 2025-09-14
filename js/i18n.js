@@ -1,7 +1,7 @@
 let translations = {}; // stocke les traductions globalement
 
 export async function loadTranslations() {
-  const res = await fetch('../translations.json');
+  const res = await fetch('translations.json');
   const data = await res.json();
 
   const lang = navigator.language.slice(0,2) || 'en'; // ex: "fr" ou "en"
